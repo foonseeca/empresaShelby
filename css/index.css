@@ -1,0 +1,13 @@
+#login {
+    width: 700px;
+    height: 300px;
+    max-height: 500px;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 1px solid rgb(66, 65, 65);
+    border-radius: 3px;
+    padding: 8px;
+    margin: 4px;
+    margin-top: 200px;
+    margin-left: 230px;
+}
