@@ -1,0 +1,23 @@
+CREATE DATABASE empresa
+DEFAULT CHARSET UTF8
+DEFAULT COLLATE UTF8_GENERAL_CI;
+
+USE empresa;
+
+Create TABLE clientes(
+id_cliente INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+nome VARCHAR (60),
+data_nascimento DATE,
+cpf VARCHAR(16),
+rg VARCHAR(12),
+email VARCHAR(60),
+senha VARCHAR(30),
+celular VARCHAR(16),
+telefone VARCHAR(16),
+cep VARCHAR(11),
+cidade VARCHAR(40),
+bairro VARCHAR(40),
+rua VARCHAR(40),
+numero VARCHAR(10),
+complemento VARCHAR(40)
+);

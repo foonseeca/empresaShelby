@@ -3,6 +3,6 @@
   include_once 'conexao.php';
 
   session_destroy();
-  header("Location: ../index.html.php");
+  header("Location: ../view/login.html.php");
 
 ?>
