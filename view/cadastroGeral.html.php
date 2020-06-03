@@ -37,7 +37,7 @@
 
     <div class="container">
         <h4>Cadastre-se</h4><br>
-        <form action="../model/cadastroGeral.php" method="POST">
+        <form name="frmcpf" action="../model/cadastroGeral.php" method="POST">
             <div class="row">
                 <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix dark">account_circle</i>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="input-field col s12 m3 l3">
                     <i class="material-icons prefix dark">featured_play_list</i>
-                    <input name="cpf" id="cpf" type="text" placeholder="183.847.957-85" data-mask="000.000.000-00" class="inputDark">
+                    <input name="cpf" id="cpf" type="text" placeholder="183.847.957-85" data-mask="000.000.000-00" onblur="VerificaCPF()" class="inputDark">
                     <label id="lbl" class="active" for="first_name">CPF</label>
                 </div>
                 <div class="input-field col s12 m3 l3">
@@ -121,6 +121,7 @@
 </body>
 
 <script src="../js/cep.js"></script>
+<script src="../js/verificarCpf.js"></script>
 <script src="../js/cadastroGeral.js"></script>
 <script src="../js/jquery.mask.min.js"></script>
 
