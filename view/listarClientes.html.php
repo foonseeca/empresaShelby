@@ -112,7 +112,7 @@
                         <a href="../model/alterarCliente.php?=id" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
                     </td>
                     <td>
-                        <a href="../model/deletarCliente.php?=id.<?php $listar['id_cliente']?>." class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
+                        <a href="../model/deletarCliente.php?id=<?php echo $listar['id_cliente'];?>" class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
                     </td>
                 </tr>
             <?php } ?>
