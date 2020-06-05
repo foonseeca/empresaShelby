@@ -51,7 +51,7 @@
                 </div>
                 <div class="input-field col s12 m3 l3">
                     <i class="material-icons prefix dark">featured_play_list</i>
-                    <input name="cpf" id="cpf" type="text" placeholder="183.847.957-85" data-mask="000.000.000-00" onblur="VerificaCPF()" class="inputDark">
+                    <input name="cpf" id="cpf" type="text" placeholder="183.847.957-85" data-mask="000.000.000-00" onblur="TestaCPF(this)" class="inputDark">
                     <label id="lbl" class="active" for="first_name">CPF</label>
                 </div>
                 <div class="input-field col s12 m3 l3">
