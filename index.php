@@ -13,9 +13,9 @@
 
 <?php
 
-    require_once 'control/acesso.php';
-    $rota = new Acesso();
-    $rota->abrirTelaInicial();
+    // require_once 'control/acesso.php';
+    // $rota = new Acesso();
+    // $rota->abrirTelaInicial();
 
 ?>
 
@@ -47,18 +47,16 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m4" id="listarClientes">
-                <a href="paginaManutencao.php">
+                <a href="view/listarClientes.html.php">
                     <div class="card-panel z-depth-3 cardZoom grey-text text-darken-4 hoverable">
-                        <h5>Rendimento Escolar</h5>
-                        <p>Acesso presença do aluno, atividades desempenhadas e gráficos de rendimentos .</p>
+                        <h5>Listar Clientes</h5>
                     </div>
                 </a>
             </div>
-            <div class="col s12 m4">
-                <a href="boletimVisualizacao.html.php">
+            <div id="pesquisarCidades" class="col s12 m4">
+                <a href="view/pesquisarCidades.html.php">
                     <div class="card-panel z-depth-3 cardZoom grey-text text-darken-4 hoverable">
-                        <h5>Boletim Escolar</h5>
-                        <p>Acesso a notas </p>
+                        <h5>Pesquisar por cidades</h5>
                     </div>
                 </a>
             </div>
@@ -73,5 +71,7 @@
         </div>
     </div>
 </section>
+
+<script type="javascript" src="js/index.js"></script>
 
 </html>

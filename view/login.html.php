@@ -19,7 +19,7 @@
                     <div class="nav-wrapper">
                         <a class="brand-logo" href="login.html.php">
                             <i class="fas fa-drafting-compass"></i>
-                            <span class="hide-on-med-and-down">Shelby Ltda</span>
+                            <span class="hide-on-med-and-down">Shelby Ltda &copy;</span>
                         </a>
                         <a data-target="mobile-nav" class="sidenav-trigger">
                             <i class="material-icons">clear_all</i>
