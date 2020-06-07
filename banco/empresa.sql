@@ -6,18 +6,15 @@ USE empresa;
 
 Create TABLE clientes(
 id_cliente INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
-nome VARCHAR (60),
-data_nascimento DATE,
-cpf VARCHAR(16),
-rg VARCHAR(12),
-email VARCHAR(60),
-senha VARCHAR(30),
-celular VARCHAR(16),
+nome VARCHAR (60) NOT NULL,
+email VARCHAR(60) NOT NULL,
+senha VARCHAR(30) NOT NULL,
+celular VARCHAR(16) NOT NULL,
 telefone VARCHAR(16),
-cep VARCHAR(11),
-cidade VARCHAR(40),
-bairro VARCHAR(40),
-rua VARCHAR(40),
-numero VARCHAR(10),
+cep VARCHAR(11) NOT NULL,
+cidade VARCHAR(40) NOT NULL,
+bairro VARCHAR(40) NOT NULL,
+rua VARCHAR(40) NOT NULL,
+numero VARCHAR(10) NOT NULL,
 complemento VARCHAR(40)
 );

@@ -39,29 +39,12 @@
         <h4>Cadastre-se</h4><br>
         <form name="frmcpf" action="../model/cadastroGeral.php" method="POST">
             <div class="row">
-                <div class="input-field col s12 m4 l4">
+                <div class="input-field col s12 m3 l3">
                     <i class="material-icons prefix dark">account_circle</i>
                     <input name="nome" id="nome" type="text" placeholder="Digite seu nome" class="inputDark">
                     <label id="lbl" class="active" for="first_name">Nome</label>
                 </div>
-                <div class="input-field col s12 m2 l2">
-                    <i class="material-icons prefix dark">cake</i>
-                    <input name="nascimento" id="nascimento" type="text" placeholder="2000/09/05" data-mask="0000/00/00" class="inputDark">
-                    <label id="lbl" class="active" for="first_name">Data de Nascimento</label>
-                </div>
                 <div class="input-field col s12 m3 l3">
-                    <i class="material-icons prefix dark">featured_play_list</i>
-                    <input name="cpf" id="cpf" type="text" placeholder="183.847.957-85" data-mask="000.000.000-00" onblur="TestaCPF(this)" class="inputDark">
-                    <label id="lbl" class="active" for="first_name">CPF</label>
-                </div>
-                <div class="input-field col s12 m3 l3">
-                    <i class="material-icons prefix dark">featured_play_list</i>
-                    <input name="rg" id="rg" type="text" placeholder="79.874.857-10" class="inputDark">
-                    <label id="lbl" class="active" for="first_name">RG</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix dark">mail_outline</i>
                     <input name="email" id="email" type="text" placeholder="thomas_shelby@exemplo.com" class="inputDark">
                     <label id="lbl" class="active" for="first_name">Email</label>
@@ -70,10 +53,6 @@
                     <i class="material-icons prefix dark">security</i>
                     <input name="senha" id="senha" type="password" placeholder="*********" class="inputDark">
                     <label id="lbl" class="active" for="first_name">Senha</label>
-                </div>
-                <div class="input-field col s12 m2 l2">
-                    <input name="repetirSenha" id="repetirSenha" type="password" placeholder="*********" class="inputDark">
-                    <label id="lbl" class="active" for="first_name">Repitir Senha</label>
                 </div>
                 <div class="input-field col s12 m2 l2">
                     <i class="material-icons prefix dark">smartphone</i>
