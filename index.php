@@ -53,20 +53,6 @@
                     </div>
                 </a>
             </div>
-            <div id="pesquisarCidades" class="col s12 m4">
-                <a href="view/pesquisarCidades.html.php">
-                    <div class="card-panel z-depth-3 cardZoom grey-text text-darken-4 hoverable">
-                        <h5>Pesquisar por cidades</h5>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m4" id="pesquisarNome">
-                <a href="view/pesquisarNome.html.php">
-                    <div class="card-panel z-depth-3 cardZoom grey-text text-darken-4 hoverable">
-                        <h5>Pesquisa por Nome</h5>
-                    </div>
-                </a>
-            </div>
         </div>
     </div>
 </section>

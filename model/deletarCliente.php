@@ -14,7 +14,7 @@ require_once '../conexao/conexao.php';
         Location.href='index.php';
         </script>";
     } else {
-        echo "<script>alert('dados nao excluidos');
-        Location.href='../view/listarClientes.html.php';</script>"; 
+        echo "<script>alert('Dados nao excluidos');
+        history.back();</script>"; 
     }
 ?>
