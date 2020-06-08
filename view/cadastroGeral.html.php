@@ -100,7 +100,6 @@
 </body>
 
 <script src="../js/cep.js"></script>
-<script src="../js/verificarCpf.js"></script>
 <script src="../js/cadastroGeral.js"></script>
 <script src="../js/jquery.mask.min.js"></script>
 

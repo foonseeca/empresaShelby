@@ -60,11 +60,10 @@
                     </div>
                 </a>
             </div>
-            <div class="col s12 m4">
-                <a href="calendario.html.php">
+            <div class="col s12 m4" id="pesquisarNome">
+                <a href="view/pesquisarNome.html.php">
                     <div class="card-panel z-depth-3 cardZoom grey-text text-darken-4 hoverable">
-                        <h5>Calendário Escolar</h5>
-                        <p>Calendário de atividades acadêmicas</p>
+                        <h5>Pesquisa por Nome</h5>
                     </div>
                 </a>
             </div>
