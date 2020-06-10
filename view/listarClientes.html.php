@@ -15,7 +15,7 @@
         <nav class="red lighten-1">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a class="brand-logo" href="../index.php">
+                    <a class="brand-logo" href="../view/telaMenu.html.php">
                         <i class="fas fa-drafting-compass"></i>
                         <span class="hide-on-med-and-down">Shelby Ltda &copy;</span>
                     </a>
@@ -97,7 +97,7 @@
                         <?php echo $listar['complemento'] ?>
                     </td>
                     <td>
-                        <a href="../model/alterarCliente.php?id=<?php echo $listar['id_cliente'];?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
+                        <a href="../view/alterarCliente.html.php?id=<?php echo $listar['id_cliente'];?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
                     </td>
                     <td>
                         <a href="../model/deletarCliente.php?id=<?php echo $listar['id_cliente'];?>" class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
