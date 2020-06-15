@@ -37,14 +37,13 @@
     </div>
 </header>
 
-<div class="container">
+<div class="container"><br><br>
     <table class="highlight centered">
         <thead>
             <tr>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Celular</th>
-                <th>Telefone</th>
                 <th>CEP</th>
                 <th>Cidade</th>
                 <th>Bairro</th>
@@ -71,34 +70,31 @@
 
                 <tr>
                     <td>
-                        <?php echo $listar['nome'] ?>
+                        <?php echo $listar['nome']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['email'] ?>
+                        <?php echo $listar['email']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['celular'] ?>
+                        <?php echo $listar['celular']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['telefone'] ?>
+                        <?php echo $listar['cep']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['cep'] ?>
+                        <?php echo $listar['cidade']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['cidade'] ?>
+                        <?php echo $listar['bairro']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['bairro'] ?>
+                        <?php echo $listar['rua']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['rua'] ?>
+                        <?php echo $listar['numero']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['numero'] ?>
-                    </td>
-                    <td>
-                        <?php echo $listar['complemento'] ?>
+                        <?php echo $listar['complemento']; ?>
                     </td>
                     <td>
                         <a href="../view/alterarCliente.html.php?id=<?php echo $listar['id_cliente']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>

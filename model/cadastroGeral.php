@@ -5,7 +5,7 @@ if (($_POST['nome'] != "") && ($_POST['email'] != "") && ($_POST['senha'] != "")
 
     $conn = new conexao();
 
-    $query_insert = "INSERT INTO clientes (nome, email, senha, celular, telefone, cep, cidade, bairro, rua, numero, complemento) VALUES (:nome, :email, :senha, :celular, :telefone, :cep, :cidade, :bairro, :rua, :numero, :complemento)";
+    $query_insert = "INSERT INTO clientes (nome, email, senha, celular, cep, cidade, bairro, rua, numero, complemento) VALUES (:nome, :email, :senha, :celular, :cep, :cidade, :bairro, :rua, :numero, :complemento)";
 
     $cadastrar = $conn->getConn()->prepare($query_insert);
 
@@ -13,7 +13,6 @@ if (($_POST['nome'] != "") && ($_POST['email'] != "") && ($_POST['senha'] != "")
     $cadastrar->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
     $cadastrar->bindParam(':senha', $_POST['senha'], PDO::PARAM_STR);
     $cadastrar->bindParam(':celular', $_POST['celular'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':telefone', $_POST['telefone'], PDO::PARAM_STR);
     $cadastrar->bindParam(':cep', $_POST['cep'], PDO::PARAM_STR);
     $cadastrar->bindParam(':cidade', $_POST['cidade'], PDO::PARAM_STR);
     $cadastrar->bindParam(':bairro', $_POST['bairro'], PDO::PARAM_STR);

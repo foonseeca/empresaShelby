@@ -16,7 +16,6 @@ while ($listar = $result_query->fetch(PDO::FETCH_ASSOC)) {
     echo "Email: ".$listar["email"]."<br>";
     echo "Senha: ".$listar["senha"]."<br>";
     echo "Celular: ".$listar["celular"]."<br>";
-    echo "Telefone: ".$listar["telefone"]."<br>";
     echo "CEP: ".$listar["cep"]."<br>";
     echo "Cidade: ".$listar["cidade"]."<br>";
     echo "Bairro: ".$listar["bairro"]."<br>";
