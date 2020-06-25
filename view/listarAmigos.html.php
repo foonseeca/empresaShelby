@@ -36,20 +36,25 @@
         </nav>
     </div>
 </header>
+<?php
 
-<div class="container"><br><br>
+require_once '../conexao/conexao.php';
+session_start();
+$id_usuario = $_SESSION["id_cliente"];
+
+?>
+
+<div class="container"><br>
+<h4>Listagem de amigos</h4><br>
     <table class="highlight centered">
         <thead>
             <tr>
                 <th>Nome</th>
+                <th>Apelido</th>
+                <th>Aniversário</th>
                 <th>Email</th>
                 <th>Celular</th>
-                <th>CEP</th>
-                <th>Cidade</th>
-                <th>Bairro</th>
-                <th>Rua</th>
-                <th>Numero</th>
-                <th>Complemento</th>
+                <th>Telefone</th>
             </tr>
         </thead>
 
@@ -59,7 +64,7 @@
             require_once '../conexao/conexao.php';
 
             $conn = new conexao();
-            $query_select = "SELECT * FROM clientes";
+            $query_select = "SELECT * FROM amigos WHERE fk_id_cliente = $id_usuario ORDER BY id_amigo DESC";
 
             $result_query = $conn->getConn()->prepare($query_select);
             $result_query->execute();
@@ -73,34 +78,25 @@
                         <?php echo $listar['nome']; ?>
                     </td>
                     <td>
+                        <?php echo $listar['username']; ?>
+                    </td>
+                    <td>
+                        <?php echo date('d/m/Y', strtotime($listar['aniversario'])) ?>
+                    </td>
+                    <td>
                         <?php echo $listar['email']; ?>
                     </td>
                     <td>
                         <?php echo $listar['celular']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['cep']; ?>
+                        <?php echo $listar['telefone']; ?>
                     </td>
                     <td>
-                        <?php echo $listar['cidade']; ?>
+                        <a href="../view/alterarAmigo.html.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
                     </td>
                     <td>
-                        <?php echo $listar['bairro']; ?>
-                    </td>
-                    <td>
-                        <?php echo $listar['rua']; ?>
-                    </td>
-                    <td>
-                        <?php echo $listar['numero']; ?>
-                    </td>
-                    <td>
-                        <?php echo $listar['complemento']; ?>
-                    </td>
-                    <td>
-                        <a href="../view/alterarCliente.html.php?id=<?php echo $listar['id_cliente']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
-                    </td>
-                    <td>
-                        <a href="../model/deletarCliente.php?id=<?php echo $listar['id_cliente']; ?>" class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
+                        <a href="../model/deletarAmigo.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
                     </td>
                 </tr>
             <?php } ?>

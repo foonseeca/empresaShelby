@@ -51,7 +51,7 @@ $id_usuario = $_SESSION["id_cliente"];
     <div class="container">
         <div class="row">
             <div class="col s12 m4" id="listarClientes">
-                <a href="../view/listarClientes.html.php">
+                <a href="../view/listarAmigos.html.php">
                     <div class="card-panel z-depth-3 cardZoom grey-text text-darken-4 hoverable">
                         <h5>Listar Clientes</h5>
                     </div>
