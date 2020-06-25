@@ -11,10 +11,10 @@ require_once '../conexao/conexao.php';
 
     if ($resultado->execute()) {
         echo "<script>alert('Dados excluidos com sucesso');
-        location.href='../view/listarAmigos.html.php';
+        location.href='../view/telaMenu.html.php';
         </script>";
     } else {
         echo "<script>alert('Dados nao excluidos');
-        location.href='../view/listarAmigos.html.php'</script>"; 
+        location.href='../view/telaMenu.html.php'</script>"; 
     }
 ?>

@@ -47,7 +47,7 @@ $id_usuario = $_SESSION["id_cliente"];
 </header>
 
 
-<section class="section center">
+<!-- <section class="section center">
     <div class="container">
         <div class="row">
             <div class="col s12 m4" id="listarClientes">
@@ -59,8 +59,89 @@ $id_usuario = $_SESSION["id_cliente"];
             </div>
         </div>
     </div>
-</section>
+</section> -->
+<div class="container"><br>
+    <div class="row">
+        <div class="col s12">
+            <ul id="tabs-swipe-demo" class="tabs">
+                <li class="tab col s3"><a class="active" href="#listarAmigos">Listar Amigos</a></li>
+                <li class="tab col s3"><a href="#test-swipe-2">Test 2</a></li>
+                <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
+            </ul>
 
-<script type="javascript" src=",,/js/telaMenu.js"></script>
+            <div id="listarAmigos" class="col s12">
+                <div class="container">
+                    <h4 class="center">Listagem de amigos</h4><br>
+                    <table class="highlight centered">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Apelido</th>
+                                <th>Aniversário</th>
+                                <th>Email</th>
+                                <th>Celular</th>
+                                <th>Telefone</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php
+
+                            require_once '../conexao/conexao.php';
+
+                            $conn = new conexao();
+                            $query_select = "SELECT * FROM amigos WHERE fk_id_cliente = $id_usuario ORDER BY id_amigo DESC";
+
+                            $result_query = $conn->getConn()->prepare($query_select);
+                            $result_query->execute();
+
+                            while ($listar = $result_query->fetch(PDO::FETCH_ASSOC)) {
+
+                            ?>
+
+                                <tr>
+                                    <td>
+                                        <?php echo $listar['nome']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $listar['username']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo date('d/m/Y', strtotime($listar['aniversario'])) ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $listar['email']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $listar['celular']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $listar['telefone']; ?>
+                                    </td>
+                                    <td>
+                                        <a href="../view/alterarAmigo.html.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
+                                    </td>
+                                    <td>
+                                        <a href="../model/deletarAmigo.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="test-swipe-2" class="col s12 red">Test 2</div>
+            <div id="test-swipe-3" class="col s12 green">Test 3</div>
+        </div>
+    </div>
+</div>
+
+<script type="javascript" src="../js/cadastroGeral.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.tabs').tabs();
+    });
+</script>
 
 </html>

@@ -32,8 +32,9 @@ if(isset($_POST['editar'])){
         location.href='../view/telaMenu.html.php'</script>";
     } else {
         echo "<script>alert('Dados não Alterados');
-        location.href='../view/listarAmigos.html.php';</script>";
+        location.href='../view/telaMenu.html.php';</script>";
     }
 }else{
-    echo "<script>alert('Erro no banco de dados')</script>";
+    echo "<script>alert('Erro no banco de dados')
+    location.href='../view/telaMenu.html.php';</script>";
 }
