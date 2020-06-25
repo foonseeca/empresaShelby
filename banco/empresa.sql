@@ -4,7 +4,7 @@ DEFAULT COLLATE UTF8_GENERAL_CI;
 
 USE empresa;
 
-Create TABLE clientes(
+CREATE TABLE clientes(
 id_cliente INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
 nome VARCHAR (60) NOT NULL,
 email VARCHAR(60) NOT NULL,
@@ -17,4 +17,24 @@ rua VARCHAR(40) NOT NULL,
 numero VARCHAR(10) NOT NULL,
 complemento VARCHAR(40)
 );
+
+CREATE TABLE amigos(
+id_amigo INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+nome VARCHAR (60) NOT NULL,
+email VARCHAR (60) NOT NULL,
+celular VARCHAR (16) NOT NULL,
+telefone VARCHAR (16),
+cep VARCHAR (11) NOT NULL,
+cidade VARCHAR (40) NOT NULL,
+bairro VARCHAR (40) NOT NULL,
+rua VARCHAR(40) NOT NULL,
+numero VARCHAR(10) NOT NULL,
+complemento VARCHAR(40),
+fk_id_cliente INTEGER NOT NULL
+);
+
+ALTER TABLE amigos ADD CONSTRAINT fk_id_cliente FOREIGN KEY (fk_id_cliente) REFERENCES clientes (id_cliente);
+
+
+
 

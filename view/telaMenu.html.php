@@ -28,6 +28,9 @@
                     </a>
                     <ul class="right hide-on-med-and-down">
                         <li>
+                            <a href="cadastroAmigos.html.php" class="btnIndexMenu">Cadastre Novos Amigos</a>
+                        </li>
+                        <li>
                             <a href="../model/logout.php" class="btn-flat btnLight hide-on-small-only">Sair</a>
                         </li>
                     </ul>
