@@ -30,7 +30,7 @@
                         </a>
                         <ul class="right hide-on-med-and-down">
                             <li>
-                                <a href="login.html.php" class="btnIndexMenu">Voltar</a>
+                                <a href="../view/telaMenu.html.php" class="btnIndexMenu">Voltar</a>
                             </li>
                         </ul>
                     </div>
@@ -40,46 +40,37 @@
     </header><br><br>
 
     <div class="container">
-        <h4>Cadastre-se</h4><br>
-        <form action="../model/cadastroGeral.php" method="POST">
+        <h4>Cadastre Seus amigos</h4><br>
+        <form action="../model/cadastrarAmigos.php" method="POST">
             <div class="row">
                 <div class="input-field col s12 m3 l4">
                     <i class="material-icons prefix dark">account_circle</i>
-                    <input name="nome" id="nome" type="text" placeholder="Digite seu nome" class="inputDark">
+                    <input name="nome" id="nome" type="text" placeholder="Digite o nome" class="inputDark">
                     <label id="lbl" for="first_name">Nome</label>
                 </div>
-                <div class="input-field col s12 m3 l4">
+                <div class="input-field col s12 m3 l3">
                     <i class="material-icons prefix dark">account_box</i>
-                    <input name="username" id="username" type="text" placeholder="Digite seu nome" class="inputDark">
-                    <label id="lbl" for="first_name">Username</label>
+                    <input name="apelido" id="apelido" type="text" placeholder="Digite o Apelido" class="inputDark">
+                    <label id="lbl" for="first_name">Apelido</label>
                 </div>
                 <div class="input-field col s12 m3 l3">
                     <i class="material-icons prefix dark">cake</i>
                     <input name="aniversario" id="aniversario" type="tel" data-mask="00/00/0000" placeholder="05/09/2000" class="inputDark">
-                    <label id="lbl" for="first_name">Data de nascimento</label>
+                    <label id="lbl" for="first_name">Aniversário</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m3 l3">
+                <div class="input-field col s12 m3 l4">
                     <i class="material-icons prefix dark">mail_outline</i>
                     <input name="email" id="email" type="email" placeholder="thomas_shelby@exemplo.com" class="inputDark">
                     <label id="lbl" for="email">Email</label>
                 </div>
-                <div class="input-field col s12 m2 l2">
-                    <i class="material-icons prefix dark">security</i>
-                    <input name="senha" id="senha" type="password" class="inputDark">
-                    <label id="lbl" for="password">Senha</label>
-                </div>
-                <div class="input-field col s12 m2 l2">
-                    <input name="conf_senha" id="conf_senha" type="password" class="inputDark" onblur="validarSenha()">
-                    <label id="lbl" for="password">Confirmar senha</label>
-                </div>
-                <div class="input-field col s12 m2 l2">
+                <div class="input-field col s12 m2 l3">
                     <i class="material-icons prefix dark">smartphone</i>
                     <input name="celular" id="celular" type="tel" placeholder="(11) 97765-3360" data-mask="(00) 00000-0000" class="inputDark">
                     <label id="lbl" for="first_name">Celular</label>
                 </div>
-                <div class="input-field col s12 m2 l2">
+                <div class="input-field col s12 m2 l3">
                     <i class="material-icons prefix dark">call</i>
                     <input name="telefone" id="telefone" type="tel" placeholder="(11) 4002-8922" data-mask="(00) 0000-0000" class="inputDark">
                     <label id="lbl" for="first_name">Telefone</label>
@@ -95,19 +86,5 @@
 <script src="../js/cep.js"></script>
 <script src="../js/cadastroGeral.js"></script>
 <script src="../js/jquery.mask.min.js"></script>
-
-<script>
-    var senha = document.getElementById("senha"),
-        confSenha = document.getElementById("conf_senha");
-
-    function validarSenha() {
-        if (senha.value != confSenha.value) {
-            M.toast({
-                html: 'Senhas Diferentes',
-                classes: 'rounded'
-            })
-        } else {}
-    }
-</script>
 
 </html>

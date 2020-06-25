@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
+if (isset($_POST['email']) && isset($_POST['senha'])) {
 
     require_once '../conexao/conexao.php';
     require_once '../model/login.php';
@@ -12,7 +12,8 @@ if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) 
     $usuario->login($email,$senha);
 
 } else {
-    
+    echo "<script>alert('Ops, houve algum erro, tente novamente')
+    history.back()</script>";
 }
 
 

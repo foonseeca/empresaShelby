@@ -1,32 +1,42 @@
 <?php
+
 require_once '../conexao/conexao.php';
 
-if (($_POST['nome'] != "") && ($_POST['email'] != "") && ($_POST['senha'] != "") && ($_POST['celular'] != "") && ($_POST['cep'] != "")&& ($_POST['cidade'] != "") && ($_POST['bairro'] != "") && ($_POST['rua'] != "") && ($_POST['numero'] != "")) {
+$nome = $_POST['nome'];
+$username = $_POST['username'];
+$data_nascimento = $_POST['aniversario'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+$celular = $_POST['celular'];
+$telefone = $_POST['telefone'];
+
+
+if (($nome != "") && ($username != "") && ($email != "") && ($senha != "") && ($celular != "")) {
+
+    //convertendo a data para cadastrar no banco
+    $data = str_replace('-','/', $data_nascimento);
+    $aniversario = date('Y-m-d', strtotime($data));
 
     $conn = new conexao();
 
-    $query_insert = "INSERT INTO clientes (nome, email, senha, celular, cep, cidade, bairro, rua, numero, complemento) VALUES (:nome, :email, :senha, :celular, :cep, :cidade, :bairro, :rua, :numero, :complemento)";
+    $query_insert = "INSERT INTO clientes (nome, username, aniversario, email, senha, celular, telefone) VALUES (:nome, :username, :aniversario, :email, :senha, :celular, :telefone)";
 
     $cadastrar = $conn->getConn()->prepare($query_insert);
 
-    $cadastrar->bindParam(':nome', $_POST['nome'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':senha', $_POST['senha'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':celular', $_POST['celular'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':cep', $_POST['cep'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':cidade', $_POST['cidade'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':bairro', $_POST['bairro'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':rua', $_POST['rua'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':numero', $_POST['numero'], PDO::PARAM_STR);
-    $cadastrar->bindParam(':complemento', $_POST['complemento'], PDO::PARAM_STR);
-
+    $cadastrar->bindParam(':nome', $nome, PDO::PARAM_STR);
+    $cadastrar->bindParam(':username', $username, PDO::PARAM_STR);
+    $cadastrar->bindParam(':aniversario', $aniversario, PDO::PARAM_STR);
+    $cadastrar->bindParam(':email', $email, PDO::PARAM_STR);
+    $cadastrar->bindParam(':senha', $senha, PDO::PARAM_STR);
+    $cadastrar->bindParam(':celular', $celular, PDO::PARAM_STR);
+    $cadastrar->bindParam(':telefone', $telefone, PDO::PARAM_STR);
     $cadastrar->execute();
 
     if ($cadastrar->rowCount()) {
-        echo "<script>alert('Cadastro inserido com sucesso');
+        echo "<script>alert('Cadastrado com sucesso');
         window.location='../view/login.html.php';</script>";
     } else {
-        echo "<script>alert('ERRO: Preencha os campos e tente novamente');
+        echo "<script>alert('Ops algo deu errado!!');
         history.back();</script>";
     }
 } else {

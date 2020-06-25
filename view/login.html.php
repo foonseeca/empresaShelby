@@ -41,7 +41,7 @@
 
     <div class="container">
         <div id="login" class="login">
-            <form action="../control/logar.php" method="post">
+            <form action="../control/logar.php" method="POST">
                 <div class="row">
                     <div class="input-field col s12 m10 l10">
                         <i class="material-icons prefix dark">mail_outline</i>
