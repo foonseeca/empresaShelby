@@ -48,7 +48,6 @@ $id_usuario = $_SESSION["id_cliente"];
 
 <div class="container"><br>
     <div class="row">
-
         <div id="listarAmigos" class="col s12">
             <h4 class="center">Listagem de amigos</h4><br>
             <table class="highlight centered">
@@ -129,9 +128,8 @@ $id_usuario = $_SESSION["id_cliente"];
     <div class="modal-content">
         <h4 class="center">Pesquisa por nome</h4><br>
         <form action="pesquisarNome.html.php" method="POST">
-            <div class="input-field col s12 m3 l4">
-                <i class="material-icons prefix dark">account_circle</i>
-                <input name="nome" id="nome" type="text" placeholder="Digite o nome" class="inputDark">
+            <div class="input-field col s12 m12 l12">
+                <input name="nome" id="nome" type="text" class="inputDark">
                 <label id="lbl" for="first_name">Digite o Nome</label>
             </div>
             <div class="input-field right">
@@ -149,7 +147,6 @@ $id_usuario = $_SESSION["id_cliente"];
                 <select name="cidade">
                     <option value="" disabled selected>Selecionar a cidade</option>
                     <?php
-
                     $conn = new conexao();
                     $query = "SELECT cidade FROM amigos WHERE fk_id_cliente = $id_usuario GROUP BY cidade";
 
@@ -158,7 +155,7 @@ $id_usuario = $_SESSION["id_cliente"];
 
                     while ($cidade = $result->fetch(PDO::FETCH_ASSOC)) {
                     ?>
-                        <option value=""><?php echo $cidade["cidade"]?></option>
+                        <option value="<?php echo $cidade['cidade']?>"><?php echo $cidade["cidade"] ?></option>
                     <?php
                     }
                     ?>
@@ -175,6 +172,7 @@ $id_usuario = $_SESSION["id_cliente"];
     $(document).ready(function() {
         $('.tabs').tabs();
     });
+
     $(document).ready(() => {
         $('.tooltipped').tooltip()
     });

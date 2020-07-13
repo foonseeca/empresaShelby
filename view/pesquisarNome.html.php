@@ -14,6 +14,27 @@
     <title>Pesquisa por nome</title>
 </head>
 
+<?php
+
+require_once '../conexao/conexao.php';
+$conn = new conexao();
+
+session_start();
+$id_usuario = $_SESSION["id_cliente"];
+
+$nome_amigo = $_POST['nome'];
+
+if ($nome_amigo == null) {
+    echo "<script>alert('Preencha as informações pedidas')
+    history.back()</script>";
+}
+
+$query_select = "SELECT * FROM amigos WHERE nome LIKE '%$nome_amigo%'";
+
+$result_query = $conn->getConn()->prepare($query_select);
+$result_query->execute();
+?>
+
 <header>
     <div class="navbar-fixed">
         <nav class="red lighten-1">
@@ -39,31 +60,22 @@
 
 <div class="container">
     <table class="highlight centered">
+        <h4 class="center">Listagem de amigos</h4><br>
         <thead>
             <tr>
                 <th>Nome</th>
+                <th>Apelido</th>
+                <th>Aniversário</th>
                 <th>Email</th>
                 <th>Celular</th>
-                <th>Telefone</th>
-                <th>CEP</th>
                 <th>Cidade</th>
-                <th>Bairro</th>
-                <th>Rua</th>
-                <th>Numero</th>
-                <th>Complemento</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
 
         <tbody>
             <?php
-
-            require_once '../conexao/conexao.php';
-
-            $conn = new conexao();
-            $query_select = "SELECT * FROM clientes";
-
-            $result_query = $conn->getConn()->prepare($query_select);
-            $result_query->execute();
 
             while ($listar = $result_query->fetch(PDO::FETCH_ASSOC)) {
 
@@ -74,37 +86,25 @@
                         <?php echo $listar['nome'] ?>
                     </td>
                     <td>
+                        <?php echo $listar['username'] ?>
+                    </td>
+                    <td>
+                    <?php echo date('d/m/Y', strtotime($listar['aniversario'])) ?>
+                    </td>
+                    <td>
                         <?php echo $listar['email'] ?>
                     </td>
                     <td>
                         <?php echo $listar['celular'] ?>
                     </td>
                     <td>
-                        <?php echo $listar['telefone'] ?>
-                    </td>
-                    <td>
-                        <?php echo $listar['cep'] ?>
-                    </td>
-                    <td>
                         <?php echo $listar['cidade'] ?>
                     </td>
                     <td>
-                        <?php echo $listar['bairro'] ?>
+                        <a href="../view/alterarAmigo.html.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3 tooltipped" data-position="left" data-tooltip="Alterar"><i class="material-icons">edit</i></a>
                     </td>
                     <td>
-                        <?php echo $listar['rua'] ?>
-                    </td>
-                    <td>
-                        <?php echo $listar['numero'] ?>
-                    </td>
-                    <td>
-                        <?php echo $listar['complemento'] ?>
-                    </td>
-                    <td>
-                        <a href="../model/alterarCliente.php?id=<?php echo $listar['id_cliente']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
-                    </td>
-                    <td>
-                        <a href="../model/deletarCliente.php?id=<?php echo $listar['id_cliente']; ?>" class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
+                        <a href="../model/deletarAmigo.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light red darken-4 tooltipped" data-position="right" data-tooltip="Excluir"><i class="material-icons">delete</i></a>
                     </td>
                 </tr>
             <?php } ?>
