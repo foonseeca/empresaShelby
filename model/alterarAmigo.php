@@ -9,7 +9,7 @@ $username = $_POST["apelido"];
 $data_nascimento = $_POST["aniversario"];
 $email = $_POST["email"];
 $celular = $_POST["celular"];
-$telefone = $_POST["telefone"];
+$cidade = $_POST["cidade"];
 $id_amigo = $_POST["id_amigo"];
 
 if(isset($_POST['editar'])){
@@ -17,14 +17,14 @@ if(isset($_POST['editar'])){
     $data = str_replace('-','/', $data_nascimento);
     $aniversario = date('Y-m-d', strtotime($data));
 
-    $query_update = "UPDATE amigos SET nome=:nome, username=:username, aniversario=:aniversario, email=:email, celular=:celular, telefone=:telefone WHERE id_amigo=:id_amigo";
+    $query_update = "UPDATE amigos SET nome=:nome, username=:username, aniversario=:aniversario, email=:email, celular=:celular, cidade=:cidade WHERE id_amigo=:id_amigo";
     $resultado = $conn->getConn()->prepare($query_update);
     $resultado->bindParam(':nome', $nome);
     $resultado->bindParam(':username', $username);
     $resultado->bindParam(':aniversario', $aniversario);
     $resultado->bindParam(':email', $email);
     $resultado->bindParam(':celular', $celular);
-    $resultado->bindParam(':telefone', $telefone);
+    $resultado->bindParam(':cidade', $cidade);
     $resultado->bindParam(':id_amigo', $id_amigo);
 
     if ($resultado->execute()) {

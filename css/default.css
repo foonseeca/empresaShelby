@@ -71,3 +71,8 @@
 #pesquisarNome {
     margin-top: 150px;
 }
+
+#modalPesquisarCidade {
+    max-height: 100%;
+    overflow: visible;
+}

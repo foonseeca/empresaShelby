@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../css/default.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Inicio</title>
+    <title>Alterar Amigo</title>
 </head>
 
 <header>

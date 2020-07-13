@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../js/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="../css/default.css">
-    <title>Cadastro Geral</title>
+    <title>Cadastro de Amigos</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
             <nav class="red lighten-1">
                 <div class="container">
                     <div class="nav-wrapper">
-                        <a class="brand-logo" href="login.html.php">
+                        <a class="brand-logo" href="../view/telaMenu.html.php">
                             <i class="fas fa-drafting-compass"></i>
                             <span class="hide-on-med-and-down">Agenda &copy;</span>
                         </a>
@@ -43,37 +43,37 @@
         <h4>Cadastre Seus amigos</h4><br>
         <form action="../model/cadastrarAmigos.php" method="POST">
             <div class="row">
-                <div class="input-field col s12 m3 l4">
+                <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix dark">account_circle</i>
                     <input name="nome" id="nome" type="text" placeholder="Digite o nome" class="inputDark">
                     <label id="lbl" for="first_name">Nome</label>
                 </div>
-                <div class="input-field col s12 m3 l3">
+                <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix dark">account_box</i>
                     <input name="apelido" id="apelido" type="text" placeholder="Digite o Apelido" class="inputDark">
                     <label id="lbl" for="first_name">Apelido</label>
                 </div>
-                <div class="input-field col s12 m3 l3">
+                <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix dark">cake</i>
                     <input name="aniversario" id="aniversario" type="tel" data-mask="00/00/0000" placeholder="05/09/2000" class="inputDark">
                     <label id="lbl" for="first_name">Aniversário</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m3 l4">
+                <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix dark">mail_outline</i>
                     <input name="email" id="email" type="email" placeholder="thomas_shelby@exemplo.com" class="inputDark">
                     <label id="lbl" for="email">Email</label>
                 </div>
-                <div class="input-field col s12 m2 l3">
+                <div class="input-field col s12 m4 l4">
                     <i class="material-icons prefix dark">smartphone</i>
                     <input name="celular" id="celular" type="tel" placeholder="(11) 97765-3360" data-mask="(00) 00000-0000" class="inputDark">
                     <label id="lbl" for="first_name">Celular</label>
                 </div>
-                <div class="input-field col s12 m2 l3">
-                    <i class="material-icons prefix dark">call</i>
-                    <input name="telefone" id="telefone" type="tel" placeholder="(11) 4002-8922" data-mask="(00) 0000-0000" class="inputDark">
-                    <label id="lbl" for="first_name">Telefone</label>
+                <div class="input-field col s12 m4 l4">
+                    <i class="material-icons prefix dark">room</i>
+                    <input name="cidade" id="cidade" type="text" placeholder="Digite a cidade" class="inputDark">
+                    <label id="lbl" for="first_name">Cidade</label>
                 </div>
             </div>
             <div class="input-field right">

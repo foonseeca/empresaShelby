@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../css/default.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Inicio</title>
+    <title>Pesquisa por nome</title>
 </head>
 
 <header>
@@ -19,7 +19,7 @@
         <nav class="red lighten-1">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a class="brand-logo" href="../index.php">
+                    <a class="brand-logo" href="../view/telaMenu.html.php">
                         <i class="fas fa-drafting-compass"></i>
                         <span class="hide-on-med-and-down">Agenda &copy;</span>
                     </a>

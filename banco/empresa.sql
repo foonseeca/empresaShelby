@@ -9,7 +9,7 @@ id_cliente INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
 nome VARCHAR (60) NOT NULL,
 username VARCHAR (30) NULL,
 aniversario DATE NULL,
-email VARCHAR(60) NOT NULL,
+email VARCHAR(60) UNIQUE NOT NULL,
 senha VARCHAR(30) NOT NULL,
 celular VARCHAR(16) NOT NULL,
 telefone VARCHAR (16) NULL 
@@ -22,7 +22,7 @@ username VARCHAR (30) NULL,
 aniversario DATE NULL,
 email VARCHAR (60) NOT NULL,
 celular VARCHAR (16) NOT NULL,
-telefone VARCHAR (16) NULL,
+cidade VARCHAR (50) NOT NULL,
 fk_id_cliente INTEGER NOT NULL
 );
 

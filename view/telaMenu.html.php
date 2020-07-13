@@ -17,7 +17,7 @@ $id_usuario = $_SESSION["id_cliente"];
 
     <link rel="stylesheet" href="../css/default.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Inicio</title>
+    <title>Tela Menu</title>
 </head>
 
 <header>
@@ -46,101 +46,149 @@ $id_usuario = $_SESSION["id_cliente"];
     </div>
 </header>
 
-
-<!-- <section class="section center">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m4" id="listarClientes">
-                <a href="../view/listarAmigos.html.php">
-                    <div class="card-panel z-depth-3 cardZoom grey-text text-darken-4 hoverable">
-                        <h5>Listar Clientes</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
 <div class="container"><br>
     <div class="row">
-        <div class="col s12">
-            <ul id="tabs-swipe-demo" class="tabs">
-                <li class="tab col s3"><a class="active" href="#listarAmigos">Listar Amigos</a></li>
-                <li class="tab col s3"><a href="#test-swipe-2">Test 2</a></li>
-                <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
-            </ul>
 
-            <div id="listarAmigos" class="col s12">
-                <div class="container">
-                    <h4 class="center">Listagem de amigos</h4><br>
-                    <table class="highlight centered">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Apelido</th>
-                                <th>Aniversário</th>
-                                <th>Email</th>
-                                <th>Celular</th>
-                                <th>Telefone</th>
-                            </tr>
-                        </thead>
+        <div id="listarAmigos" class="col s12">
+            <h4 class="center">Listagem de amigos</h4><br>
+            <table class="highlight centered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Apelido</th>
+                        <th>Aniversário</th>
+                        <th>Email</th>
+                        <th>Celular</th>
+                        <th>Cidade</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-                        <tbody>
-                            <?php
+                <tbody>
+                    <?php
 
-                            require_once '../conexao/conexao.php';
+                    require_once '../conexao/conexao.php';
 
-                            $conn = new conexao();
-                            $query_select = "SELECT * FROM amigos WHERE fk_id_cliente = $id_usuario ORDER BY id_amigo DESC";
+                    $conn = new conexao();
+                    $query_select = "SELECT * FROM amigos WHERE fk_id_cliente = $id_usuario ORDER BY id_amigo DESC";
 
-                            $result_query = $conn->getConn()->prepare($query_select);
-                            $result_query->execute();
+                    $result_query = $conn->getConn()->prepare($query_select);
+                    $result_query->execute();
 
-                            while ($listar = $result_query->fetch(PDO::FETCH_ASSOC)) {
+                    while ($listar = $result_query->fetch(PDO::FETCH_ASSOC)) {
 
-                            ?>
+                    ?>
 
-                                <tr>
-                                    <td>
-                                        <?php echo $listar['nome']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $listar['username']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo date('d/m/Y', strtotime($listar['aniversario'])) ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $listar['email']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $listar['celular']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $listar['telefone']; ?>
-                                    </td>
-                                    <td>
-                                        <a href="../view/alterarAmigo.html.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3"><i class="material-icons">edit</i></a>
-                                    </td>
-                                    <td>
-                                        <a href="../model/deletarAmigo.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light red darken-4"><i class="material-icons">delete</i></a>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div id="test-swipe-2" class="col s12 red">Test 2</div>
-            <div id="test-swipe-3" class="col s12 green">Test 3</div>
+                        <tr>
+                            <td>
+                                <?php echo $listar['nome']; ?>
+                            </td>
+                            <td>
+                                <?php echo $listar['username']; ?>
+                            </td>
+                            <td>
+                                <?php echo date('d/m/Y', strtotime($listar['aniversario'])) ?>
+                            </td>
+                            <td>
+                                <?php echo $listar['email']; ?>
+                            </td>
+                            <td>
+                                <?php echo $listar['celular']; ?>
+                            </td>
+                            <td>
+                                <?php echo $listar['cidade']; ?>
+                            </td>
+                            <td>
+                                <a href="../view/alterarAmigo.html.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light blue lighten-3 tooltipped" data-position="left" data-tooltip="Alterar"><i class="material-icons">edit</i></a>
+                            </td>
+                            <td>
+                                <a href="../model/deletarAmigo.php?id=<?php echo $listar['id_amigo']; ?>" class="btn-floating btn-flat waves-effect waves-light red darken-4 tooltipped" data-position="right" data-tooltip="Excluir"><i class="material-icons">delete</i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
-<script type="javascript" src="../js/cadastroGeral.js"></script>
+<section class="floating-buttons">
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red lighten-1">
+            <i class="large material-icons">search</i>
+        </a>
+        <ul>
+            <li><a href="#modalPesquisarCidade" class="modal-trigger btn-floating indigo darken-3"><i class="material-icons">room</i></a></li>
+            <li><a href="#modalPesquisarNome" class="modal-trigger btn-floating grey"><i class="material-icons">contacts</i></a></li>
+        </ul>
+    </div>
+</section>
+
+<div id="modalPesquisarNome" class="modal">
+    <div class="modal-content">
+        <h4 class="center">Pesquisa por nome</h4><br>
+        <form action="pesquisarNome.html.php" method="POST">
+            <div class="input-field col s12 m3 l4">
+                <i class="material-icons prefix dark">account_circle</i>
+                <input name="nome" id="nome" type="text" placeholder="Digite o nome" class="inputDark">
+                <label id="lbl" for="first_name">Digite o Nome</label>
+            </div>
+            <div class="input-field right">
+                <button name="btncadastrar" id="fomrCadastro" type="submit" class="btn-flat btnDark"><i class="material-icons">search</i> Pesquisar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="modalPesquisarCidade" class="modal">
+    <div class="modal-content">
+        <h4 class="center">Pesquisa por cidade</h4><br>
+        <form action="pesquisarCidades.html.php" method="POST">
+            <div class="input-field col s12 m12 l12 validate">
+                <select name="cidade">
+                    <option value="" disabled selected>Selecionar a cidade</option>
+                    <?php
+
+                    $conn = new conexao();
+                    $query = "SELECT cidade FROM amigos WHERE fk_id_cliente = $id_usuario GROUP BY cidade";
+
+                    $result = $conn->getConn()->prepare($query);
+                    $result->execute();
+
+                    while ($cidade = $result->fetch(PDO::FETCH_ASSOC)) {
+                    ?>
+                        <option value=""><?php echo $cidade["cidade"]?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="input-field right">
+                <button name="btncadastrar" id="fomrCadastro" type="submit" class="btn-flat btnDark"><i class="material-icons">search</i> Pesquisar</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 <script>
     $(document).ready(function() {
         $('.tabs').tabs();
+    });
+    $(document).ready(() => {
+        $('.tooltipped').tooltip()
+    });
+
+    $(document).ready(() => {
+        $('select').formSelect()
+    });
+
+    $(document).ready(() => {
+        $('.fixed-action-btn').floatingActionButton()
+    });
+
+    $(document).ready(() => {
+        $('.modal').modal()
     });
 </script>
 

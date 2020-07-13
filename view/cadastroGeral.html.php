@@ -21,7 +21,7 @@
             <nav class="red lighten-1">
                 <div class="container">
                     <div class="nav-wrapper">
-                        <a class="brand-logo" href="login.html.php">
+                        <a class="brand-logo" href="../view/telaMenu.html.php">
                             <i class="fas fa-drafting-compass"></i>
                             <span class="hide-on-med-and-down">Agenda &copy;</span>
                         </a>
